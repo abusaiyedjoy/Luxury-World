@@ -1,0 +1,56 @@
+[
+    {
+      "id": 1,
+      "name": "Lamborghini Aventador",
+      "title": "Ultimate Performance Supercar",
+      "description": "The Lamborghini Aventador combines groundbreaking technology with the purest essence of design, setting a new benchmark in the world of super sports cars.",
+      "price": 417826,
+      "status": "sale",
+      "image": "https://img.jamesedition.com/listing_images/2024/04/02/13/32/04/138ecb5c-e367-497e-9d28-692890defc64/je/1100xxs.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Ferrari F8 Tributo",
+      "title": "A Monument to Italian Engineering",
+      "description": "The Ferrari F8 Tributo pays homage to Ferrari's unparalleled engineering and speed, offering drivers a unique blend of exhilarating performance and sophisticated style.",
+      "price": 276450,
+      "status": "sale",
+      "image": "http://limme.like-themes.com/wp-content/uploads/2020/11/car_02.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Rolls-Royce Phantom",
+      "title": "Epitome of Luxury",
+      "description": "The Rolls-Royce Phantom redefines luxury as the most silent motor car in the world, offering unmatched comfort and bespoke craftsmanship.",
+      "price": 450000,
+      "status": "sale",
+      "image": "http://limme.like-themes.com/wp-content/uploads/2020/11/car_01-1024x680.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Porsche 911 Turbo S",
+      "title": "Iconic Sports Car",
+      "description": "The Porsche 911 Turbo S continues to stand as a symbol of Porsche's racing heritage, delivering exceptional power, precision, and performance on the road.",
+      "price": 203500,
+      "status": "sale",
+      "image": "http://limme.like-themes.com/wp-content/uploads/2019/06/rent_04-1024x680.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Bentley Continental GT",
+      "title": "The Pinnacle of Grand Touring",
+      "description": "The Bentley Continental GT blends classic grand touring virtues with modern technology, offering an unforgettable driving experience characterized by luxury and performance.",
+      "price": 202500,
+      "status": "sale",
+      "image": "http://limme.like-themes.com/wp-content/uploads/2020/11/car_03-1024x680.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Aston Martin DB11",
+      "title": "A Legacy of Innovation",
+      "description": "The Aston Martin DB11 is a testament to Aston Martin's commitment to craftsmanship, innovation, and design, offering a unique combination of performance and luxury.",
+      "price": 198995,
+      "status": "sale",
+      "image": "http://limme.like-themes.com/wp-content/uploads/2019/06/rent_06-1024x680.jpg"
+    }
+  ]
