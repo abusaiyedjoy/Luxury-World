@@ -1,6 +1,32 @@
+
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import Google from "./Google";
+import useAuth from './../Hooks/useAuth';
 
 const Login = () => {
+
+  const {signInUser}=useAuth();
+
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    const { email, password } = data;
+    signInUser(email, password)
+      .then(result => {
+        console.log(result);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }
+
+
   return (
     <div>
       <div className="hero min-h-screen bg-cover text-white " style={{
@@ -14,36 +40,45 @@ const Login = () => {
         }}>
           
           <h1 className="text-4xl text-center mt-6 font-bold">Please Login!</h1>
-          <form className=" card-body ">
-            <div className="form-control">
+          <form onSubmit={handleSubmit(onSubmit)} className=" card-body ">
+          <div className="form-control">
               <label className="label">
                 <span className="label-text text-white">Email</span>
               </label>
               <input
+                name=" email"
                 type="email"
                 placeholder="email"
                 className="input text-white bg-transparent input-bordered"
+                {...register("email", { required: true })}
                 required
               />
+              {errors.email && <span className="text-red-500 mt-1">This field is required</span>}
             </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text text-white">Password</span>
               </label>
               <input
+                name="password"
                 type="password"
                 placeholder="password"
-                className="input bg-transparent text-white input-bordered"
+                className="input text-white bg-transparent input-bordered"
+                {...register("password", { required: true })}
                 required
               />
+              {errors.password && <span className="text-red-500 mt-1">This field is required</span>}
               <label className="label">
-                <a href="#" className="label-text-alt text-white link link-hover">
+                <a href="#" className="label-text-alt link link-hover">
                   Forgot password?
                 </a>
               </label>
             </div>
             <div className="form-control mt-6">
               <button className="btn text-white text-lg">Login</button>
+            </div>
+            <div>
+              <Google></Google>
             </div>
           </form>
           <p className=" text-center mt-0 mb-3">
