@@ -25,8 +25,8 @@ const Navbar = () => {
   const {LogOut, user}=useAuth();
 
   return (
-    <div className="flex justify-between items-center w-full bg-transparent p-2 absolute">
-      <div className="navbar">
+    <div className="flex justify-between items-center w-full bg-transparent p-2 absolute z-10">
+      <div className="navbar text-white">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -51,19 +51,19 @@ const Navbar = () => {
             >{navLinks}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <Link to="/" className="btn btn-ghost text-3xl font-bold">Luxury World</Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
+          <ul className="menu menu-horizontal px-1 ">
             {navLinks}
           </ul>
         </div>
         {
           user?.email? <div className="navbar-end">
-          <Link onClick={LogOut} className="btn">LogOut</Link>
+          <Link onClick={LogOut} className="btn text-white">LogOut</Link>
         </div>
         :<div className="navbar-end">
-        <Link to='/login' className="btn">Login</Link>
+        <Link to='/login' className="btn text-white">Login</Link>
       </div>
         }
       </div>
