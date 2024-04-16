@@ -10,8 +10,8 @@ const Catagory = () => {
         }}
       >
         <div className="pl-12 flex flex-col justify-center items-start h-full text-black">
-          <h1 className="mb-5 text-4xl font-bold">CONFIGURATOR</h1>
-          <p className="mb-5 text-6xl uppercase max-w-md font-bold ">
+          <h1 className="mb-5 text-2xl sm:text-4xl font-bold">CONFIGURATOR</h1>
+          <p className="mb-5 text-4xl sm:text-7xl uppercase max-w-md font-bold ">
             CREATE YOUR REVUELTO
           </p>
           <button className="btn btn-outline text-black hover:bg-gray-200">
