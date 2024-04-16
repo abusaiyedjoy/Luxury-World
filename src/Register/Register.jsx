@@ -2,10 +2,15 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form"
 import useAuth from "../Hooks/useAuth";
+import { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
 
   const {createUser}=useAuth()
+  const [registerError, setRegisterError]=useState('');
+  const [success, setSuccess]=useState('');
+  const [showPassword, setShowPassword]= useState(false)
   
 
   const {
@@ -14,14 +19,28 @@ const Register = () => {
     formState: { errors },
   } = useForm();
 
+  
+
+  
   const onSubmit = (data) => {
+    
     const { email, password } = data;
+    setRegisterError('')
+    setSuccess('')
+    if(!password.match(/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/)){
+      setRegisterError('Password must be at least 6 characters long and include both uppercase and lowercase letters.');
+      return
+    }else{
+      setRegisterError("")
+    }
     createUser(email, password)
       .then(result => {
         console.log(result);
+        setSuccess('User Created successfully')
       })
       .catch(error => {
         console.error(error);
+        setRegisterError(error.message)
       });
   };
 
@@ -82,18 +101,20 @@ const Register = () => {
               />
               {errors.image && <span className="text-red-500 mt-1">This field is required</span>}
             </div>
-            <div className="form-control">
+            <div className="form-control  relative">
               <label className="label">
                 <span className="label-text text-white">Password</span>
               </label>
               <input
                 name="password"
-                type="password"
+                type={showPassword?'text': "password"}
                 placeholder="password"
                 className="input text-white bg-transparent input-bordered"
                 {...register("password", { required: true })}
                 required
+                
               />
+              <span className="absolute top-12 right-2" onClick={()=> setShowPassword(!showPassword)}>{showPassword ? <FaEyeSlash className="text-white"></FaEyeSlash> : <FaEye className="text-white"></FaEye>}</span>
               {errors.password && <span className="text-red-500 mt-1">This field is required</span>}
               <label className="label">
                 <a href="#" className="label-text-alt link link-hover">
@@ -104,8 +125,14 @@ const Register = () => {
             <div className="form-control mt-6">
               <button className="btn text-white">Register</button>
             </div>
+            {
+              registerError && <p className="text-red-500 font-semibold">{registerError}</p>
+            }
+            {
+              success && <p className="text-green-500 font-semibold">{success}</p>
+            }
           </form>
-          <p className=" text-center mt-0 mb-3">
+          <p className=" text-center mt-2 mb-3">
             Already have an account?{" "}
             <Link to="/login" className="text-blue-500">
               Login

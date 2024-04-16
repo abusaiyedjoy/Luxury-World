@@ -1,12 +1,18 @@
 import useAuth from "../Hooks/useAuth";
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
+
 
 const Google = () => {
     const {GoogleLogin, GithubLogin}=useAuth();
   return (
-    <div className="form-control mt-6">
-      <button onClick={()=>GoogleLogin()} className="btn text-white text-lg">Google</button>
-      <button onClick={()=>GithubLogin()} className="btn text-white text-lg">Github</button>
+      <div>
+        <h1 className="font-semibold my-3 text-center  ">----------Login with social media---------</h1>
+    <div className="mt-6 flex justify-center items-center gap-8">
+      <button onClick={()=>GoogleLogin()} className="btn"><FcGoogle className="text-2xl" /></button>
+      <button onClick={()=>GithubLogin()} className="btn"><FaGithub className="text-2xl" /></button>
     </div>
+      </div>
   );
 };
 

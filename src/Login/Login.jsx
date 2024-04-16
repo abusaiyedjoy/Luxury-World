@@ -3,10 +3,16 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Google from "./Google";
 import useAuth from './../Hooks/useAuth';
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { useState } from "react";
 
 const Login = () => {
 
   const {signInUser}=useAuth();
+  const [registerError, setRegisterError]=useState('');
+  const [success, setSuccess]=useState('');
+  const [showPassword, setShowPassword]= useState(false)
+
 
 
   const {
@@ -17,12 +23,19 @@ const Login = () => {
 
   const onSubmit = (data) => {
     const { email, password } = data;
+
+
+    setRegisterError('')
+    setSuccess('')
+
     signInUser(email, password)
       .then(result => {
         console.log(result);
+        setSuccess('User Created successfully')
       })
       .catch(error => {
         console.error(error);
+        setRegisterError(error.message)
       });
   }
 
@@ -55,18 +68,19 @@ const Login = () => {
               />
               {errors.email && <span className="text-red-500 mt-1">This field is required</span>}
             </div>
-            <div className="form-control">
+            <div className="form-control relative">
               <label className="label">
                 <span className="label-text text-white">Password</span>
               </label>
               <input
                 name="password"
-                type="password"
+                type={showPassword?'text': "password"}
                 placeholder="password"
                 className="input text-white bg-transparent input-bordered"
                 {...register("password", { required: true })}
                 required
               />
+              <span className="absolute top-12 right-2" onClick={()=> setShowPassword(!showPassword)}>{showPassword ? <FaEyeSlash className="text-white"></FaEyeSlash> : <FaEye className="text-white"></FaEye>}</span>
               {errors.password && <span className="text-red-500 mt-1">This field is required</span>}
               <label className="label">
                 <a href="#" className="label-text-alt link link-hover">
@@ -80,6 +94,12 @@ const Login = () => {
             <div>
               <Google></Google>
             </div>
+            {
+              registerError && <p className="text-red-500 font-semibold">{registerError}</p>
+            }
+            {
+              success && <p className="text-green-500 font-semibold">{success}</p>
+            }
           </form>
           <p className=" text-center mt-0 mb-3">
             Not a member yet?{" "}
