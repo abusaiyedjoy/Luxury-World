@@ -7,6 +7,7 @@ import ErrorPage from "../ErrorPage/ErrorPage";
 import ContactUs from "../Contact/Contact";
 import Service from "../Service/Service";
 import PrivateRoute from "../privateRoute/PrivateRoute";
+import CarDetails from "../CarDetails/CarDetails";
 
 
 const router = createBrowserRouter([
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
         {
             path: "/register",
             element: <Register></Register>
+        },
+        {
+            path: '/CarDetails/:id',
+            loader: () => fetch('/data.json'),
+            element: <PrivateRoute><CarDetails></CarDetails></PrivateRoute>
         },
       ]
     },

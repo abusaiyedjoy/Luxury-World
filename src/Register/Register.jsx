@@ -7,7 +7,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
 
-  const {createUser}=useAuth()
+  const {createUser, updateUserProfile}=useAuth()
   const [registerError, setRegisterError]=useState('');
   const [success, setSuccess]=useState('');
   const [showPassword, setShowPassword]= useState(false)
@@ -24,7 +24,7 @@ const Register = () => {
   
   const onSubmit = (data) => {
     
-    const { email, password } = data;
+    const { email, password, name, image } = data;
     setRegisterError('')
     setSuccess('')
     if(!password.match(/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/)){
@@ -34,8 +34,8 @@ const Register = () => {
       setRegisterError("")
     }
     createUser(email, password)
-      .then(result => {
-        console.log(result);
+      .then(() => {
+        updateUserProfile(name, image)
         setSuccess('User Created successfully')
       })
       .catch(error => {

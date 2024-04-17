@@ -76,25 +76,20 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        {/* {user && (
-          <img
-            className="w-12 mr-4 h-12  rounded-full border-2 border-[#ffff]"
-            src={user?.photoURL ? user.photoURL : profile}
-            alt=""
-          />
-        )} */}
         {user ? (
           <div className="dropdown dropdown-end">
-            <div tabIndex={0} role="button" className="btn m-1 text-gray-50">
-              Profile
-            </div>
+            <label tabIndex={0} className="btn m-1 btn-ghost btn-circle avatar text-gray-50">
+              <div className="w-10 rounded-full">
+                <img src={user?.photoURL || "https://avatars.githubusercontent.com/u/153846355?v=4"} alt="" />
+              </div>
+            </label>
             <ul
               tabIndex={0}
               className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
             >
               {user && (
                 <p className="font-semibold btn  mr-2 text-gray-50 bg-opacity-10">
-                  {user.displayName}
+                  {user.displayName || 'Name Not Found'}
                 </p>
               )}
               <button

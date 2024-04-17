@@ -7,6 +7,7 @@ const Catagory = () => {
           backgroundImage:
             "url( https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/homepage/model_choose/2023/revuelto_home.jpg)",
           backgroundRepeat: "no-repeat",
+          
         }}
       >
         <div className="pl-12 flex flex-col justify-center items-start h-full text-black">
