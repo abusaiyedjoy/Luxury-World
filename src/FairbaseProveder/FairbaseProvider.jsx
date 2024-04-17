@@ -33,12 +33,18 @@ const FairbaseProvider = ({ children }) => {
   };
 
   //Update Profile
-  const updateUserProfile = (name,image)=>{
-    setLoader(true)
-    return updateProfile(auth.currentUser,{
-        displayName: name, photoURL: image
-    })
-}
+
+const updateUserProfile = (name, image) => {
+  setLoader(true);
+  return updateProfile(auth.currentUser, {
+    displayName: name,
+    photoURL: image
+  }).then(() => {
+    setUser(auth.currentUser); 
+    setLoader(false);
+  });
+};
+
 
   //    GoogleLogin
   const GoogleLogin = () => {

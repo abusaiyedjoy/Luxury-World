@@ -5,7 +5,7 @@ const Catagory = () => {
         className="bg-white py-8 h-[500px] bg-cover"
         style={{
           backgroundImage:
-            "url( https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/homepage/model_choose/2023/revuelto_home.jpg)",
+            "url( https://i.ibb.co/HzVtwvq/revuelto-home.webp)",
           backgroundRepeat: "no-repeat",
           
           

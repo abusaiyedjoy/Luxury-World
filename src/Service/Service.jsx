@@ -7,7 +7,7 @@ const Service = () => {
             className="bg-cover h-[80vh] bg-center relative"
             style={{
               backgroundImage:
-                "url( https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/face_react/after_sales/service/after_sales_service_hb_1.jpg)",
+                "url( https://i.ibb.co/0VzCqq0/after-sales-service-hb-1.webp)",
               backgroundRepeat: "no-repeat",
             }}
           >

@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form"
 import useAuth from "../Hooks/useAuth";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { swal } from 'sweetalert';
 
 const Register = () => {
 
@@ -25,6 +26,7 @@ const Register = () => {
   const onSubmit = (data) => {
     
     const { email, password, name, image } = data;
+    swal("Your query has been Submitted!", "You are now loged in", "success");
     setRegisterError('')
     setSuccess('')
     if(!password.match(/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/)){
@@ -52,7 +54,7 @@ const Register = () => {
         }}>
         <div className="card shrink-0 w-[45%] shadow-2xl bg-base-100 mt-24 mb-12  bg-cover bg-center"  style={{
           backgroundImage:
-            "url( http://limme.like-themes.com/wp-content/uploads/2019/06/rent_11-1024x680.jpg)",
+            "url( https://i.ibb.co/D4djs17/09-08-selezione-slide-03.webp)",
               
         }}>
           <h1 className="text-4xl text-center text-white mt-6 font-bold">

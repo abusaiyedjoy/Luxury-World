@@ -51,7 +51,7 @@ const Login = () => {
         }}>
         <div className="relative card shrink-0 w-[40%] shadow-2xl bg-cover bg-center" style={{
           backgroundImage:
-            "url( http://limme.like-themes.com/wp-content/uploads/2019/06/rent_11-1024x680.jpg)",
+            "url( https://i.ibb.co/D4djs17/09-08-selezione-slide-03.webp)",
               
         }}>
           

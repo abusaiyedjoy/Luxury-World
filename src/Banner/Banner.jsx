@@ -25,7 +25,7 @@ const Banner = () => {
             className="bg-cover min-h-screen bg-center"
             style={{
               backgroundImage:
-                "url( https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/Selezione/2020/overview/09_08/09_08_selezione_slide_01.jpg)",
+                "url( https://i.ibb.co/D4djs17/09-08-selezione-slide-03.webp)",
               backgroundRepeat: "no-repeat",
             }}
           >
@@ -48,7 +48,7 @@ const Banner = () => {
             className="hero bg-cover min-h-screen bg-center"
             style={{
               backgroundImage:
-                "url( https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/models_gw/2023/03_29_revuelto/gate_models_hero_01.jpg)",
+                "url( https://i.ibb.co/0GSFbPk/gate-models-hero-02.webp)",
             }}
           >
             <div className="hero-overlay bg-opacity-20"></div>
@@ -70,7 +70,7 @@ const Banner = () => {
             className="hero min-h-screen bg-cover bg-center"
             style={{
               backgroundImage:
-                "url( https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/face_react/beyond/landing/hero/beyond_land_hero_01.jpg)",
+                "url( https://i.ibb.co/ry2ZX6K/beyond-land-hero-01.jpg)",
             }}
           >
             <div className="hero-overlay bg-opacity-20"></div>
