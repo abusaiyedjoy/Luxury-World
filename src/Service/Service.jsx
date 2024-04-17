@@ -3,7 +3,7 @@ import { GiAutoRepair } from "react-icons/gi";
 const Service = () => {
     return (
         <div>
-            <div
+            <div  data-aos="zoom-in" data-aos-duration="1000"
             className="bg-cover h-[80vh] bg-center relative"
             style={{
               backgroundImage:
@@ -12,7 +12,7 @@ const Service = () => {
             }}
           >
             <div className="hero-overlay bg-opacity-40"></div>
-            <div className="absolute top-1/3">
+            <div data-aos="fade-right" data-aos-duration="1000" data-aos-delay="800" className="absolute top-1/3">
               <div className="pl-6 sm:pl-10 flex flex-col justify-start items-start text-white">
                 <h1 className="mb-4 text-2xl sm:text-4xl font-bold">LAMBORGHINI</h1>
                 <p className="mb-4 text-5xl sm:text-7xl uppercase max-w-md font-bold ">

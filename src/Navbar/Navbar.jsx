@@ -11,7 +11,7 @@ const Navbar = () => {
         <NavLink to="/service">Service</NavLink>
       </li>
       <li className=" text-gray-50">
-        <NavLink to="/contact">Contact</NavLink>
+        <NavLink to="/contact">Update Profile</NavLink>
       </li>
     </>
   );
@@ -89,7 +89,7 @@ const Navbar = () => {
             >
               {user && (
                 <p className="font-semibold btn  mr-2 text-gray-50 bg-opacity-10">
-                  {user.displayName || 'Name Not Found'}
+                  {user?.displayName || 'Name Not Found'}
                 </p>
               )}
               <button

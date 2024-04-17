@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 
 const itemCard = ({ item }) => {
   console.log(item);
-  const { id, name, description, image, seats, title, status, price } =
+  const { id, name, description, image, seats, price } =
     item || {};
   return (
-    <div>
+    <div data-aos="fade-up"
+    data-aos-duration="3000">
       <div className=" rounded-md shadow-md  bg-transparent border border-dashed">
         <img
           src={image}
@@ -57,7 +58,7 @@ const itemCard = ({ item }) => {
               <input type="radio" name="rating-1" className="mask mask-star  bg-gray-50" />
             </div>
           </div>
-          <Link to={`/CarDetails/:${id}`}
+          <Link to={`/CarDetails/${id}`}
             type="button"
             className="btn flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:text-gray-50"
           >

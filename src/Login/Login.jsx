@@ -5,6 +5,7 @@ import Google from "./Google";
 import useAuth from './../Hooks/useAuth';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useState } from "react";
+import swal from "sweetalert";
 
 const Login = () => {
 
@@ -23,6 +24,8 @@ const Login = () => {
 
   const onSubmit = (data) => {
     const { email, password } = data;
+
+    swal("Your query has been Submitted!", "You are now loged in", "success");
 
 
     setRegisterError('')

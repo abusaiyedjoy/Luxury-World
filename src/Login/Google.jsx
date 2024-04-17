@@ -1,14 +1,13 @@
 import useAuth from "../Hooks/useAuth";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 const Google = () => {
     const {GoogleLogin, GithubLogin}=useAuth();
     const navigate =useNavigate()
-    const location =useLocation();
-    const form = location?.state || "/";
+    const form = "/";
     const handleSocialProvider = socialProvider => {
       socialProvider()
           .then(result => {

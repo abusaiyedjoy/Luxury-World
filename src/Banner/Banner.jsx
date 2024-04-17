@@ -30,7 +30,7 @@ const Banner = () => {
             }}
           >
             <div className="hero-overlay bg-opacity-40"></div>
-            <div className="w-full h-screen text-neutral-content">
+            <div data-aos="fade-right" data-aos-duration="1000" className="w-full h-screen text-neutral-content">
               <div className="pl-6 sm:pl-10 flex flex-col justify-center items-start h-full text-white">
                 <h1 className="mb-5 text-2xl sm:text-4xl font-bold">FIRST EDITION</h1>
                 <p className="mb-5 text-4xl sm:text-7xl uppercase max-w-md font-bold ">
@@ -52,7 +52,7 @@ const Banner = () => {
             }}
           >
             <div className="hero-overlay bg-opacity-20"></div>
-            <div className="w-full h-screen text-neutral-content">
+            <div data-aos="fade-right" data-aos-duration="1000" className="w-full h-screen text-neutral-content">
             <div className="pl-6 sm:pl-10 flex flex-col justify-center items-start h-full text-white">
                 <h1 className="mb-5 text-2xl sm:text-4xl font-bold">FIRST EDITION</h1>
                 <p className="mb-5 text-4xl sm:text-7xl uppercase max-w-md font-bold ">
@@ -74,7 +74,7 @@ const Banner = () => {
             }}
           >
             <div className="hero-overlay bg-opacity-20"></div>
-            <div className="w-full h-screen text-neutral-content">
+            <div data-aos="fade-right" data-aos-duration="1000" className="w-full h-screen text-neutral-content">
             <div className="pl-6 sm:pl-10 flex flex-col justify-center items-start h-full text-white">
                 <h1 className="mb-5 text-2xl sm:text-4xl font-bold">FIRST EDITION</h1>
                 <p className="mb-5 text-4xl sm:text-7xl uppercase max-w-md font-bold ">

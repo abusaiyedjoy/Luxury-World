@@ -13,7 +13,8 @@ const Items = () => {
 
   return (
     <div>
-      <h1 className="text-5xl font-bold text-center my-12 text-gray-50">Our Collection</h1>
+      <h1 data-aos="fade-up"
+     data-aos-duration="2000" className="text-5xl font-bold text-center my-12 text-gray-50">Our Collection</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {data.map((item) => (
           <ItemCard key={item.id} item={item} /> 
