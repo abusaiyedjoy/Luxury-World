@@ -1,13 +1,12 @@
-
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form"
 import useAuth from "../Hooks/useAuth";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { swal } from 'sweetalert';
+import  swal  from 'sweetalert';
 
 const Register = () => {
-
+  document.title="Luxury World - Register";
   const {createUser, updateUserProfile}=useAuth()
   const [registerError, setRegisterError]=useState('');
   const [success, setSuccess]=useState('');
@@ -21,28 +20,26 @@ const Register = () => {
   } = useForm();
 
   
-
-  
   const onSubmit = (data) => {
     
     const { email, password, name, image } = data;
-    swal("Your query has been Submitted!", "You are now loged in", "success");
-    setRegisterError('')
-    setSuccess('')
     if(!password.match(/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/)){
       setRegisterError('Password must be at least 6 characters long and include both uppercase and lowercase letters.');
       return
-    }else{
-      setRegisterError("")
+    } else {
+      setRegisterError("");
     }
+    
     createUser(email, password)
       .then(() => {
         updateUserProfile(name, image)
+        swal("Success!", "User created successfully.", "success");
         setSuccess('User Created successfully')
       })
       .catch(error => {
         console.error(error);
         setRegisterError(error.message)
+        swal("Error!", error.message, "error");
       });
   };
 
@@ -55,7 +52,6 @@ const Register = () => {
         <div className="card shrink-0 w-[45%] shadow-2xl bg-base-100 mt-24 mb-12  bg-cover bg-center"  style={{
           backgroundImage:
             "url( https://i.ibb.co/D4djs17/09-08-selezione-slide-03.webp)",
-              
         }}>
           <h1 className="text-4xl text-center text-white mt-6 font-bold">
             Please Register!

@@ -10,13 +10,13 @@ const PrivateRoute = ({children}) => {
     if(loader){
         return <div className="flex justify-center items-center h-screen"><span className="loading  loading-spinner loading-success loading-lg"></span></div> 
     }
-    if(user){
-        return children;
+    if(!user){
+        return <Navigate to="/login" replace state={{ from: location }}></Navigate>
     }
-    return <Navigate state={location?.pathname || '/'} to={'/login'}></Navigate>
+    return children;
 };
 
-export default PrivateRoute;
 PrivateRoute.propTypes = {
     children:PropTypes.node
-}
+};
+export default PrivateRoute;

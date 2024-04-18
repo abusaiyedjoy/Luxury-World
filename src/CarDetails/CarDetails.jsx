@@ -1,6 +1,7 @@
 import { useParams, useLoaderData } from "react-router-dom";
 
 const CarDetails = () => {
+  document.title="Luxury World - Car Details";
   const selectedCar = useLoaderData();
   const { Id } = useParams();
   const clickedData = selectedCar?.find((selectedOne) => selectedOne.id == Id);

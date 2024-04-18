@@ -7,6 +7,7 @@ const ContactUs = () => {
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
   const [updatingProfile, setUpdatingProfile] = useState(false);
+  document.title="Luxury World - Update Profile";
 
   const handleSubmit = (e) => {
     e.preventDefault();

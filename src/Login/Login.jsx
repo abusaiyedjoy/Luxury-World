@@ -1,5 +1,4 @@
-
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Google from "./Google";
 import useAuth from './../Hooks/useAuth';
@@ -8,13 +7,12 @@ import { useState } from "react";
 import swal from "sweetalert";
 
 const Login = () => {
-
-  const {signInUser}=useAuth();
-  const [registerError, setRegisterError]=useState('');
-  const [success, setSuccess]=useState('');
-  const [showPassword, setShowPassword]= useState(false)
-
-
+  document.title="Luxury World - Login";
+  const navigate = useNavigate(); 
+  const {signInUser} = useAuth();
+  const [showPassword, setShowPassword] = useState(false)
+  const location = useLocation();
+const from = location?.state || "/";
 
   const {
     register,
@@ -25,23 +23,16 @@ const Login = () => {
   const onSubmit = (data) => {
     const { email, password } = data;
 
-    swal("Your query has been Submitted!", "You are now loged in", "success");
-
-
-    setRegisterError('')
-    setSuccess('')
-
     signInUser(email, password)
-      .then(result => {
-        console.log(result);
-        setSuccess('User Created successfully')
+      .then( () => {
+        swal("Success!", "You are now logged in.", "success");
+        navigate(from, {replace: true});
+        
       })
       .catch(error => {
-        console.error(error);
-        setRegisterError(error.message)
+        swal("Error!", error.message, "error");
       });
   }
-
 
   return (
     <div>
@@ -52,19 +43,18 @@ const Login = () => {
         <div className="relative card shrink-0 w-[40%] shadow-2xl bg-cover bg-center" style={{
           backgroundImage:
             "url( https://i.ibb.co/D4djs17/09-08-selezione-slide-03.webp)",
-              
         }}>
           
           <h1 className="text-4xl text-center mt-6 font-bold">Please Login!</h1>
           <form onSubmit={handleSubmit(onSubmit)} className=" card-body ">
-          <div className="form-control">
+            <div className="form-control">
               <label className="label">
                 <span className="label-text text-white">Email</span>
               </label>
               <input
-                name=" email"
+                name="email"
                 type="email"
-                placeholder="email"
+                placeholder="Email"
                 className="input text-white bg-transparent input-bordered"
                 {...register("email", { required: true })}
                 required
@@ -77,13 +67,15 @@ const Login = () => {
               </label>
               <input
                 name="password"
-                type={showPassword?'text': "password"}
-                placeholder="password"
+                type={showPassword ? 'text' : 'password'}
+                placeholder="Password"
                 className="input text-white bg-transparent input-bordered"
                 {...register("password", { required: true })}
                 required
               />
-              <span className="absolute top-12 right-2" onClick={()=> setShowPassword(!showPassword)}>{showPassword ? <FaEyeSlash className="text-white"></FaEyeSlash> : <FaEye className="text-white"></FaEye>}</span>
+              <span className="absolute top-12 right-2" onClick={() => setShowPassword(!showPassword)}>
+                {showPassword ? <FaEyeSlash className="text-white" /> : <FaEye className="text-white" />}
+              </span>
               {errors.password && <span className="text-red-500 mt-1">This field is required</span>}
               <label className="label">
                 <a href="#" className="label-text-alt link link-hover">
@@ -97,12 +89,6 @@ const Login = () => {
             <div>
               <Google></Google>
             </div>
-            {
-              registerError && <p className="text-red-500 font-semibold">{registerError}</p>
-            }
-            {
-              success && <p className="text-green-500 font-semibold">{success}</p>
-            }
           </form>
           <p className=" text-center mt-0 mb-3">
             Not a member yet?{" "}
