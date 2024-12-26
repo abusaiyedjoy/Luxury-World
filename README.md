@@ -1,16 +1,42 @@
 # Luxury World
 
-Live link:  https://luxury-world.netlify.app/
+Live Link: [Luxury World Website](https://luxury-world.netlify.app/)
 
-# Project feature:
-1. This website is dedicated to Luxury Car. In the home page of this website you will see a navbar and a banner with a title and a car image. Also you will see some car item cards.
+## Project Features
 
-2. There are five three in the middle of navbar and the website title on the left site and Login button or Profile Image on the right side.
+1. **Dedicated to Luxury Cars**:  
+   This website showcases luxury cars. On the homepage, you will find a visually appealing navbar, a banner with a captivating title, and an image of a car. Below the banner, you will see multiple car item cards displaying details of various luxury cars.
 
-3. If you click get purses of any card, you will see card details.
+2. **Navbar Structure**:  
+   - The navbar consists of three key menu items in the center: **Home**, **Service**, and **Update Profile**.  
+   - The website title, "Luxury World," is on the left side of the navbar.  
+   - On the right side, you can find a **Login** button or a profile image, depending on the user's authentication state.
 
-4. When you click Service router of navbar, You will see the service section.
+3. **Interactive Car Cards**:  
+   Clicking on the **Get Purses** button of any car card will take you to a detailed view of that car.
 
-5. If you click in the update Profile of navbar, you get a page for updating your profile by using your name and photoURL.
+4. **Service Section**:  
+   Navigating to the **Service** menu in the navbar directs users to the service section, which highlights the services offered.
 
-6. This website is completely responsive for mibile, tablet, laptop & decstop. 
+5. **Profile Update Feature**:  
+   Clicking on the **Update Profile** menu in the navbar opens a page where users can update their profile information by entering their name and photo URL.
+
+6. **Responsive Design**:  
+   This website is fully responsive and optimized for various devices, including mobile phones, tablets, laptops, and desktops.
+
+## Technologies Used
+
+- **React**: For building a dynamic user interface.
+- **Tailwind CSS**: A utility-first CSS framework for responsive and aesthetically pleasing design.
+- **Netlify**: For hosting and deployment of the live website.
+
+## How to Run Locally
+
+### Prerequisites
+- Node.js and npm installed on your system.
+
+### Steps
+
+1. Clone the repository:
+   ```bash
+   git clone <your-repository-url>
